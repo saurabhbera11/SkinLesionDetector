@@ -1,0 +1,125 @@
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='../static/style.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+  <script src='../static/client.js'></script>
+</head>
+<body>
+  <div id='main'>
+    <nav class="navbar navbar-light bg-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/4033/4033855.png" alt="" width="60" height="70" class="d-inline-block align-text-top">
+        </a>
+        <span class='name'>DermoCare</span>
+      </div>
+    </nav>
+  
+
+  <div class='row '>
+    <div class='col-sm-1 col-lg-2'>
+    </div>
+    <div class='col-sm-9 col-lg-8'>
+    <h1 class="greeting">Getting worried about a skin problem?</h1>
+    <p style="font-size: 1.3rem; color: #570530;">Don't worry. Upload a picture of the affected area and understand the skin problem instantly without leaving your chair. Try it now!</p><br>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='#analyze'">Analyze my skin problem</button>
+    </div>
+    <div class='col-sm-2 col-lg-2'>
+    </div>
+  </div>
+</div>
+<hr>
+
+
+<div class='row instruction'>
+  <h3>Still Confused?</h3>
+  <h5>Follow 3 easy steps to understand your problem.</h5>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class='col-lg-4 col-sm-12'>
+      <div class="card border border-success blog-card" style="width: 15Srem;">
+      <img class="card-img-top" src="https://www.nutroo.me/wp-content/uploads/2020/11/health-problem-skin-diseases-young-woman-showing-her-back-with-acne-red-spots-teen-girl-scratching-her-shoulder-with-pimples-stockpack-istock-696x464.jpg" alt="Card image cap">
+      <div class="card-body"><br>
+      <h5>1.Click a picture of the affected area.</h5>
+      </div>
+      </div>
+      </div>
+
+
+      <div class='col-lg-4 col-sm-12'>
+      <div class="card border border-success blog-card" style="width: 15Srem;">
+      <img class="card-img-top" src="https://thumbs.dreamstime.com/b/uploading-upload-data-download-information-concept-70985291.jpg" alt="Card image cap">
+      <div class="card-body"><br>
+
+      <h5>2.Upload the picture and click on the analyze button </h5>
+
+      </div>
+      </div>
+      </div>
+
+      <div class='col-lg-4 col-sm-12'>
+      <div class="card border border-success blog-card" style="width: 15Srem;">
+      <img class="card-img-top" src="https://images.creativemarket.com/0.1.0/ps/7371556/1820/1214/m1/fpnw/wm1/senza-titolo-1-.jpg?1574795656&s=530cd4c44c86665cd8142c5e7d15df3d" alt="Card image cap">
+      <div class="card-body">
+      <h5>3. Get the pre-diagnosis reports with just a few clicks and download it.!</h5>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+<hr>
+
+  <div class='center' id='analyze'>
+    <h2 style="font-family: 'Quicksand', sans-serif;">
+      Upload the image
+    </h2>
+    <div class='content'>
+      <div class='no-display'>
+        <input id='file-input'
+               class='no-display'
+               type='file'
+               name='file'
+               accept='image/*'
+               onchange='showPicked(this)'>
+      </div>
+    
+      <button type="button" class="btn btn-outline-success" onclick='showPicker()'>Upload a Image</button>
+      <div class='upload-label'>
+        <label class="upload" id='upload-label'>No file chosen</label>
+      </div>
+      <div>
+        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+      </div>
+      <div class='analyze'>
+        <button type="button" class="btn btn-outline-info" style="font-family: 'Roboto', sans-serif;" onclick='anayze()'>Analyze my Skin Problem</button>
+        
+      </div>
+      <div class='result-label'>
+        <label id='result-label'></label>
+      </div>
+    </div>
+  </div>
+
+<footer>
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+    <div class="footer">
+      <p class='copyright'>Copyright © DermoCare</p>
+    </div>
+    </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
