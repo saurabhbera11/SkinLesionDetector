@@ -14,6 +14,15 @@ body {
     color: black;
 }
 
+@media screen and (max-width: 1000px){
+    #main{width: 80vh;
+    height: 47vh;
+    background-image: url('https://mahoneydermatology.com/wp-content/uploads/2020/12/My-Post-53.png');
+    background-size: cover;
+    color: black;
+}
+}
+
 .title {
     font-size: 30px;
     margin-top: 1em;
@@ -25,6 +34,23 @@ body {
     margin-left: 5rem;
     
 }
+
+.statement{
+    font-size: 1.3 rem;
+    color: #570530;
+}
+
+@media screen and (max-width: 1000px) {
+    .greeting {
+        font-size: 4rem;
+    }
+    .statement{
+        margin-top: 50px;
+        font-size: 2rem;
+    }
+    
+  }
+
 
 .navbar{
     width: 100%;
