@@ -12,7 +12,7 @@ from starlette.staticfiles import StaticFiles
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1EH87-zs52xU2ggQTXs1xwpXCi8leP7Qn?alt=media&key=AIzaSyCW3oIxf0jrmfoF3acOuCVt1vTwEHoZeEM'
 export_file_name = 'resnet50(50epoch).pkl'
 
-classes = ['benign','malignant']
+classes = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
 path = Path(__file__).parent
 
 app = Starlette()
