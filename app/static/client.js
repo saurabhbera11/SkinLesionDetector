@@ -49,7 +49,7 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]}`;
+      el("result-label").innerHTML = `The result is = ${response["result"]} (Melanoma) and it is a malignant lesion';
     }
     el("analyze-button").innerHTML = "Analyze";
     
