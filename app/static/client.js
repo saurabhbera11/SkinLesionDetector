@@ -38,10 +38,10 @@ function analyze() {
     var uploadFiles = el("file-input").files;
     if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
-    el("analyze-button").innerHTML = "Analyzing...";
+    el("severity-button").innerHTML = "Analyzing...";
     var xhr = new XMLHttpRequest();
     var loc = window.location;
-    xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
+    xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/severity`,
     true);
     xhr.onerror = function() {
     alert(xhr.responseText);
