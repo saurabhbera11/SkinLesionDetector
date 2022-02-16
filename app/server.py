@@ -12,7 +12,7 @@ from starlette.staticfiles import StaticFiles
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1EH87-zs52xU2ggQTXs1xwpXCi8leP7Qn?alt=media&key=AIzaSyCW3oIxf0jrmfoF3acOuCVt1vTwEHoZeEM'
 export_file_name = 'resnet50(50epoch).pkl'
 
-path_resnet = Path(__file__).parent
+path = Path(__file__).parent
 
 # export_file_url_2='https://www.googleapis.com/drive/v3/files/1oHnUsiLpfftGLnCpil1MEiBpm-DW8X6z?alt=media&key=AIzaSyCW3oIxf0jrmfoF3acOuCVt1vTwEHoZeEM'
 # export_file_name_2='2020densenet.pkl'
@@ -38,9 +38,9 @@ async def download_file(url, dest):
 
 
 async def setup_learner():
-    await download_file(export_file_url, path_resnet/ export_file_name)
+    await download_file(export_file_url, path/ export_file_name)
     try:
-        learn = load_learner(path_resnet, export_file_name)
+        learn = load_learner(path, export_file_name)
         return learn
     except RuntimeError as e:
         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
