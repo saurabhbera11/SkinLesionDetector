@@ -29,7 +29,8 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]} and the type is melanoma`;
+      var result='${response["result"]}'
+      el("result-label").innerHTML="There is a possibility of skin lesion being Melanoma and it is malignant in nature."
     }
     el("analyze-button").innerHTML = "Analyze";
   };
