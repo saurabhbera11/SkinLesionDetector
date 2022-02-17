@@ -30,7 +30,7 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       var result='${response["result"]}'
-      el("result-label").innerHTML="There is a possibility of skin lesion being Melanoma and it is malignant in nature."
+      el("result-label").innerHTML="The possibility of skin lesion is MELANOMA. <br> It is of MALIGNANT type."; 
     }
     el("analyze-button").innerHTML = "Analyze";
   };
