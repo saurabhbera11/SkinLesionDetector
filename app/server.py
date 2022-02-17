@@ -88,7 +88,7 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
-    return JSONResponse({'The predicted class of skin lesion is ': str(prediction)},'and it is malignant in nature.')
+    return JSONResponse({'result': str(prediction)}')
 
 
 # @app.route('/severity', methods=['POST'])
