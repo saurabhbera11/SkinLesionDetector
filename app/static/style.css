@@ -39,6 +39,11 @@ body {
     font-size: 1.5rem;
 }
 
+#result-label{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    color: #D29D2B;
+}
 @media screen and (max-width: 1000px) {
     .greeting {
         font-size: 2.5rem;
