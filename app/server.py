@@ -70,7 +70,13 @@ async def analyze(request):
     return JSONResponse({'result': str(prediction)})
 
 
-
+@app.route('/severity', methods=['POST'])
+async def severity(request):
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    img = open_image(BytesIO(img_bytes))
+    prediction = learn.predict(img)[0]
+    return JSONResponse({'result': str(prediction)})
 
 
 if __name__ == '__main__':
