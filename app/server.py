@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1Lc6b4j1ZPCQ2OI1DW7vb_beGgAxH4r83?alt=media&key=AIzaSyBMJwUtuzHW6hmYoppfeAFC-LOFsNbyR3w'
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1Lc6b4j1ZPCQ2OI1DW7vb_beGgAxH4r83?alt=media&key=AIzaSyCmS09hxlGJsw4xDQuPcCr0lI33e-EuMhE'
 export_file_name = '2020densenet.pkl'
 
 
