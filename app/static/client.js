@@ -56,7 +56,7 @@ function severity() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       var result='${response["result"]}'
-      el("result-label").innerHTML=`Result = ${response["result"]}`; 
+      el("severity-label").innerHTML=`Result = ${response["result"]}`; 
     }
     el("analyze-button").innerHTML = "Analyze";
   };
