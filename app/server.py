@@ -9,18 +9,12 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1EH87-zs52xU2ggQTXs1xwpXCi8leP7Qn?alt=media&key=AIzaSyCW3oIxf0jrmfoF3acOuCVt1vTwEHoZeEM'
-export_file_name = 'resnet50(50epoch).pkl'
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1Lc6b4j1ZPCQ2OI1DW7vb_beGgAxH4r83?alt=media&key=AIzaSyBMJwUtuzHW6hmYoppfeAFC-LOFsNbyR3w'
+export_file_name = '2020densenet.pkl'
 
+
+classes = ['benign','malignant']
 path = Path(__file__).parent
-
-# export_file_url_2='https://www.googleapis.com/drive/v3/files/1oHnUsiLpfftGLnCpil1MEiBpm-DW8X6z?alt=media&key=AIzaSyCW3oIxf0jrmfoF3acOuCVt1vTwEHoZeEM'
-# export_file_name_2='2020densenet.pkl'
-
-# path_densenet = Path(__file__).parent
-
-classes = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
-# classes_2=['benign','malignant']
 
 
 app = Starlette()
@@ -51,18 +45,6 @@ async def setup_learner():
             raise
             
          
-# async def setup_learner_2():
-#     await download_file(export_file_url_2, path_densenet / export_file_name_2)
-#     try:
-#         learn = load_learner(path_densenet, export_file_name_2)
-#         return learn
-#     except RuntimeError as e:
-#         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
-#             print(e)
-#             message = "\n\nThis model was trained with an old version of fastai and will not work in a CPU environment.\n\nPlease update the fastai library in your training environment and export your model again.\n\nSee instructions for 'Returning to work' at https://course.fast.ai."
-#             raise RuntimeError(message)
-#         else:
-#             raise
 
 
 loop = asyncio.get_event_loop()
@@ -70,10 +52,7 @@ tasks = [asyncio.ensure_future(setup_learner())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
-# loop = asyncio.get_event_loop()
-# tasks = [asyncio.ensure_future(setup_learner_2())]
-# learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
-# loop.close()
+
 
 
 @app.route('/')
@@ -91,13 +70,7 @@ async def analyze(request):
     return JSONResponse({'result': str(prediction)})
 
 
-# @app.route('/severity', methods=['POST'])
-# async def severity(request):
-#     img_data = await request.form()
-#     img_bytes = await (img_data['file'].read())
-#     img = open_image(BytesIO(img_bytes))
-#     prediction = learn.predict(img)[0]
-#     return JSONResponse({'result': str(prediction)})
+
 
 
 if __name__ == '__main__':
