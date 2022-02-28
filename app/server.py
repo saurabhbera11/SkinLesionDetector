@@ -49,7 +49,9 @@ async def setup_learner():
 
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
+tasks_1 = [asyncio.ensure_futue(setup_learner_1())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
+learn_1 = loop.run_until_complete(asyncio.gather(*tasks_1))[0]
 loop.close()
 
 
@@ -97,10 +99,7 @@ async def setup_learner_1():
         else:
             raise
             
-loop = asyncio.get_event_loop()
-tasks = [asyncio.ensure_future(setup_learner_1())]
-learn_1 = loop.run_until_complete(asyncio.gather(*tasks))[0]
-loop.close()
+
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
