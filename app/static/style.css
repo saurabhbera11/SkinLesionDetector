@@ -45,6 +45,13 @@ body {
     color: #D29D2B;
     font-weight: 500;
 }
+
+#severity-label{
+    font-family:emoji;
+    font-size: 2rem;
+    color: #D29D2B;
+    font-weight: 500;
+}
 @media screen and (max-width: 1000px) {
     .greeting {
         font-size: 2.5rem;
@@ -151,6 +158,13 @@ body {
     padding: 10px;
     font-size: 13px;
 }
+
+.severity-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 13px;
+}
+
 
 button.choose-file-button {
     width: 200px;
