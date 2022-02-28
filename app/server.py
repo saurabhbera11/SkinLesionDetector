@@ -81,7 +81,7 @@ export_file_url_1 = 'https://www.googleapis.com/drive/v3/files/1EH87-zs52xU2ggQT
 export_file_name_1 = 'resnet50(50epoch).pkl'
 
 
-classes = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
+classes_1 = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
 path = Path(__file__).parent
 
 async def setup_learner_1():
