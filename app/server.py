@@ -43,6 +43,20 @@ async def setup_learner():
             raise RuntimeError(message)
         else:
             raise
+
+           
+async def setup_learner_1():
+    await download_file(export_file_url_1, path/ export_file_name_1)
+    try:
+        learn_1 = load_learner(path, export_file_name_1)
+        return learn_1
+    except RuntimeError as e:
+        if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
+            print(e)
+            message = "\n\nThis model was trained with an old version of fastai and will not work in a CPU environment.\n\nPlease update the fastai library in your training environment and export your model again.\n\nSee instructions for 'Returning to work' at https://course.fast.ai."
+            raise RuntimeError(message)
+        else:
+            raise
             
          
 
@@ -86,18 +100,7 @@ export_file_name_1 = 'resnet50(50epoch).pkl'
 classes_1 = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
 path = Path(__file__).parent
 
-async def setup_learner_1():
-    await download_file(export_file_url_1, path/ export_file_name_1)
-    try:
-        learn_1 = load_learner(path, export_file_name_1)
-        return learn_1
-    except RuntimeError as e:
-        if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
-            print(e)
-            message = "\n\nThis model was trained with an old version of fastai and will not work in a CPU environment.\n\nPlease update the fastai library in your training environment and export your model again.\n\nSee instructions for 'Returning to work' at https://course.fast.ai."
-            raise RuntimeError(message)
-        else:
-            raise
+
             
 
 
