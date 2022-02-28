@@ -17,6 +17,13 @@ classes = ['benign','malignant']
 path = Path(__file__).parent
 
 
+export_file_url_1 = 'https://www.googleapis.com/drive/v3/files/1EH87-zs52xU2ggQTXs1xwpXCi8leP7Qn?alt=media&key=AIzaSyCmS09hxlGJsw4xDQuPcCr0lI33e-EuMhE'
+export_file_name_1 = 'resnet50(50epoch).pkl'
+
+
+classes_1 = ['AK', 'BCC', 'BKL', 'DF', 'MEL', 'NV', 'SCC', 'VASC']
+path = Path(__file__).parent
+
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
