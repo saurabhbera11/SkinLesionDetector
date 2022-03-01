@@ -101,15 +101,18 @@
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
       </div>
       <div class='analyze'>
-        <button type="button" class="btn btn-outline-info btn-lg" id='analyze-button' style="font-family: 'Roboto', sans-serif;" onclick='analyze()'>Analyze  my Skin Problem</button>
-        <button type="button" class="btn btn-outline-info btn-lg" id='analyze-button' style="font-family: 'Roboto', sans-serif;" onclick='severity()'>Severity of my Skin Problem</button>
+        <button type="button" class="btn btn-outline-info btn-lg" id='analyze-button' style="font-family: 'Roboto', sans-serif;" onclick='run()'>Analyze  my Skin Problem</button>
+        <!-- <button type="button" class="btn btn-outline-info btn-lg" id='analyze-button' style="font-family: 'Roboto', sans-serif;" onclick='severity()'>Severity of my Skin Problem</button> -->
       </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div>
-      <div class='severity-label'>
-        <label id='severity-label'><label>
-      </div>
+      <div class="results display_none" id="results">
+        <h1>Your results are here...</h1>
+        <div class='result-label '>
+          <label id='result-label'></label>
+        </div>
+        <div class='severity-label'>
+          <label id='severity-label'><label>
+          </div>
+       </div>
     </div>
   </div>
 
