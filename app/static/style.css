@@ -1,5 +1,5 @@
 body {
-    background-color: #F0ECE3;
+    background-color: black;
 }
 
 .no-display {
@@ -199,10 +199,15 @@ button:focus {
     
 }
 
+.display_none{
+    display: none !important;
+}
+
+
+
 .copyright{
     font-size: 1.2rem;
     font-family: 'Quicksand', sans-serif;
     padding-top: 1rem;
 
 }
-
